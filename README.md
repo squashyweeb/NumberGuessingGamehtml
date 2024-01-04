@@ -22,10 +22,6 @@ This project is a basic number guessing game where the user has to guess a rando
 3. Receive feedback on your guess and try to guess the correct number.
 4. Optionally, set the maximum number of attempts and use the "Reset Game" button to start a new game.
 
-## Screenshots
-
-![Game Screenshot]([screenshot.png](https://github.com/squashyweeb/NumberGuessingGamehtml/blob/main/numberguessing.png?raw=true))
-
 ## Author
 
 - [ryan].
