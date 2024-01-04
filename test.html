@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+    }
+
+    #result {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #27ae60;
+    }
+
+    #inputBox {
+      margin-top: 20px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Number Guessing Game</h1>
+  <p>Can you guess the number between 1 and 10?</p>
+  <div id="result"></div>
+  <div id="inputBox">
+    <label for="guessInput">Your guess:</label>
+    <input type="number" id="guessInput" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Submit Guess</button>
+    <br>
+    <label for="maxAttempts">Max attempts:</label>
+    <input type="number" id="maxAttempts" placeholder="Enter max attempts" value="3">
+    <button onclick="resetGame()">Reset Game</button>
+  </div>
+
+  <script>
+    let targetNumber;
+    let attempts;
+
+    resetGame();
+
+    function resetGame() {
+      targetNumber = Math.floor(Math.random() * 10) + 1;
+      attempts = parseInt(document.getElementById('maxAttempts').value) || 3;
+      document.getElementById('result').innerText = '';
+    }
+
+    function checkGuess() {
+      const userGuess = document.getElementById('guessInput').value;
+
+      if (userGuess === '') {
+        alert('Please enter a number.');
+        return;
+      }
+
+      attempts--;
+
+      if (parseInt(userGuess) === targetNumber) {
+        displayResult(`Congratulations! You guessed the correct number in ${attempts} attempts.`);
+      } else if (attempts === 0) {
+        displayResult(`Sorry, you're out of attempts. The correct number was ${targetNumber}.`);
+      } else {
+        const hint = userGuess < targetNumber ? 'too low' : 'too high';
+        displayResult(`Try again. Your guess is ${hint}. ${attempts} attempts left.`);
+      }
+    }
+
+    function displayResult(message) {
+      document.getElementById('result').innerText = message;
+    }
+  </script>
+</body>
+</html>
