@@ -17,7 +17,7 @@ This project is a basic number guessing game where the user has to guess a rando
 
 ## How to Play
 
-1. Open the `index.html` file in your web browser.
+1. Open the `test.html` file in your web browser.
 2. Enter your guess in the input field and click "Submit Guess."
 3. Receive feedback on your guess and try to guess the correct number.
 4. Optionally, set the maximum number of attempts and use the "Reset Game" button to start a new game.
