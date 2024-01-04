@@ -24,7 +24,7 @@ This project is a basic number guessing game where the user has to guess a rando
 
 ## Screenshots
 
-![Game Screenshot](screenshot.png)
+![Game Screenshot]([screenshot.png](https://github.com/squashyweeb/NumberGuessingGamehtml/blob/main/numberguessing.png?raw=true))
 
 ## Author
 
